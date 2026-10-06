@@ -38,3 +38,10 @@
     - role: zabbix
       tags:
         - zabbix
+
+- hosts: all:!zabbix
+  gather_facts: true
+  become: true
+  roles:
+    - role: zabbixagent
+      tags: zabbixagent
